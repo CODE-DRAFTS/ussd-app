@@ -3,12 +3,12 @@ from .schemas import UssdInfo
 
 app = FastAPI()
 
-app.get('/')
+@app.get('/')
 def home():
     return 'home page'
 
 
-app.post('/')
+@app.post('/')
 def home(ussd_info: UssdInfo):
     if ussd_info.text == '':
         response ='CON welcome to airtime module \n'
